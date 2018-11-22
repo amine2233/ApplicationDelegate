@@ -8,6 +8,9 @@
 #if canImport(WatchKit)
 import WatchKit
 
+#if !os(iOS)
 public protocol ApplicationDelegate {}
+
+#endif
 
 #endif

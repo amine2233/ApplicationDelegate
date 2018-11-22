@@ -56,12 +56,12 @@ open class PluggableApplicationDelegate: UIResponder, UIApplicationDelegate {
     
     public lazy var lazyServices: [ApplicationDelegate] = services()
     
-    public func services() -> [ApplicationDelegate] {
+    open func services() -> [ApplicationDelegate] {
         return []
     }
 }
 
-public extension PluggableApplicationDelegate {
+extension PluggableApplicationDelegate {
     
     public func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         return lazyServices.reduce(true) { $0 && $1.application(application, willFinishLaunchingWithOptions: launchOptions) }
@@ -72,7 +72,7 @@ public extension PluggableApplicationDelegate {
     }
 }
 
-public extension PluggableApplicationDelegate {
+extension PluggableApplicationDelegate {
     
     public func applicationWillEnterForeground(_ application: UIApplication) {
         lazyServices.forEach { $0.applicationWillEnterForeground(application) }
@@ -91,7 +91,7 @@ public extension PluggableApplicationDelegate {
     }
 }
 
-public extension PluggableApplicationDelegate {
+extension PluggableApplicationDelegate {
     
     public func applicationProtectedDataWillBecomeUnavailable(_ application: UIApplication) {
         lazyServices.forEach { $0.applicationProtectedDataWillBecomeUnavailable(application) }
@@ -102,7 +102,7 @@ public extension PluggableApplicationDelegate {
     }
 }
 
-public extension PluggableApplicationDelegate {
+extension PluggableApplicationDelegate {
     
     public func applicationWillTerminate(_ application: UIApplication) {
         lazyServices.forEach { $0.applicationWillTerminate(application) }
@@ -113,7 +113,7 @@ public extension PluggableApplicationDelegate {
     }
 }
 
-public extension PluggableApplicationDelegate {
+extension PluggableApplicationDelegate {
     
     public func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         lazyServices.forEach { $0.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken) }
