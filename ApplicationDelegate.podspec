@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name        = "ApplicationDelegate"
-    s.version       = "0.1.0"
+    s.version       = "0.2.0"
     s.description      = <<-DESC
       Sort description of 'ApplicationDelegate' framework
                        DESC
