@@ -17,8 +17,8 @@ public protocol ApplicationDelegate  {
 
 extension ApplicationDelegate {
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {}
-    func applicationWillTerminate(_ aNotification: Notification) {}
+    public func applicationDidFinishLaunching(_ aNotification: Notification) {}
+    public func applicationWillTerminate(_ aNotification: Notification) {}
 }
 
 open class PluggableApplicationDelegate: NSObject, NSApplicationDelegate {
@@ -27,18 +27,18 @@ open class PluggableApplicationDelegate: NSObject, NSApplicationDelegate {
     
     public lazy var lazyServices: [ApplicationDelegate] = services()
     
-    func services() -> [ApplicationDelegate] {
+    public func services() -> [ApplicationDelegate] {
         return []
     }
 }
 
 public extension PluggableApplicationDelegate {
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    public func applicationDidFinishLaunching(_ aNotification: Notification) {
         lazyServices.forEach { $0.applicationDidFinishLaunching(aNotification) }
     }
     
-    func applicationWillTerminate(_ notification: Notification) {
+    public func applicationWillTerminate(_ notification: Notification) {
         lazyServices.forEach { $0.applicationWillTerminate(notification) }
     }
 }
