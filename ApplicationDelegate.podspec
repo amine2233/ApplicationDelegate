@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name        = "ApplicationDelegate"
-    s.version       = "0.2.0"
+    s.version       = "0.3.0"
     s.description      = <<-DESC
       Sort description of 'ApplicationDelegate' framework
                        DESC
@@ -22,5 +22,6 @@ Pod::Spec.new do |s|
       s.watchos.deployment_target = '4.0'
       s.source            = { :git => "https://github.com/amine2233/ApplicationDelegate.git", :tag => s.version.to_s }
       s.source_files      = "Sources/**/*.swift"
+      s.swift_version = '5.0'
       s.module_name = s.name
   end

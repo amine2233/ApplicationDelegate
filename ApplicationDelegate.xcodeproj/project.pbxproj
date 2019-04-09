@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		672531F9225C6C9D00882912 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		678AD24A217B8BBE0027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD253217B8BBE0027C7F2 /* ApplicationDelegateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationDelegateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD267217B8BD40027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,9 +126,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		672531F5225C604400882912 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				678AD2C2217B8CB40027C7F2 /* Info-iOS.plist */,
+				678AD2C3217B8CB40027C7F2 /* Info-tvOS.plist */,
+				678AD2C4217B8CB40027C7F2 /* Info-macOS.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		672531F6225C604F00882912 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				678AD2A8217B8CA30027C7F2 /* Info-iOS.plist */,
+				678AD2A9217B8CA30027C7F2 /* Info-watchOS.plist */,
+				678AD2AA217B8CA30027C7F2 /* Info-tvOS.plist */,
+				678AD2AB217B8CA30027C7F2 /* Info-macOS.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		672531F7225C606300882912 /* ApplicationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				678AD2D3217B8FD20027C7F2 /* AppKit */,
+				678AD2D4217B8FD20027C7F2 /* UIKit */,
+				678AD2D2217B8FD20027C7F2 /* WatchKit */,
+			);
+			path = ApplicationDelegate;
+			sourceTree = "<group>";
+		};
+		672531F8225C608000882912 /* ApplicationDelegateTests */ = {
+			isa = PBXGroup;
+			children = (
+				678AD2C5217B8CB40027C7F2 /* ApplicationDelegateTests.swift */,
+			);
+			path = ApplicationDelegateTests;
+			sourceTree = "<group>";
+		};
 		678AD23E217B8B9F0027C7F2 = {
 			isa = PBXGroup;
 			children = (
+				672531F9225C6C9D00882912 /* Package.swift */,
 				678AD2A7217B8CA30027C7F2 /* Sources */,
 				678AD2C1217B8CB40027C7F2 /* Tests */,
 				678AD24B217B8BBE0027C7F2 /* Products */,
@@ -151,14 +192,9 @@
 		678AD2A7217B8CA30027C7F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				678AD2A8217B8CA30027C7F2 /* Info-iOS.plist */,
-				678AD2A9217B8CA30027C7F2 /* Info-watchOS.plist */,
-				678AD2AA217B8CA30027C7F2 /* Info-tvOS.plist */,
-				678AD2AB217B8CA30027C7F2 /* Info-macOS.plist */,
+				672531F6225C604F00882912 /* Config */,
 				678AD2AC217B8CA30027C7F2 /* ApplicationDelegate.h */,
-				678AD2D3217B8FD20027C7F2 /* AppKit */,
-				678AD2D4217B8FD20027C7F2 /* UIKit */,
-				678AD2D2217B8FD20027C7F2 /* WatchKit */,
+				672531F7225C606300882912 /* ApplicationDelegate */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -166,10 +202,8 @@
 		678AD2C1217B8CB40027C7F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				678AD2C2217B8CB40027C7F2 /* Info-iOS.plist */,
-				678AD2C3217B8CB40027C7F2 /* Info-tvOS.plist */,
-				678AD2C4217B8CB40027C7F2 /* Info-macOS.plist */,
-				678AD2C5217B8CB40027C7F2 /* ApplicationDelegateTests.swift */,
+				672531F5225C604400882912 /* Config */,
+				672531F8225C608000882912 /* ApplicationDelegateTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -373,10 +407,11 @@
 				TargetAttributes = {
 					678AD249217B8BBE0027C7F2 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					678AD252217B8BBE0027C7F2 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 					678AD266217B8BD40027C7F2 = {
 						CreatedOnToolsVersion = 10.0;
@@ -677,7 +712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,7 +728,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -751,7 +786,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -766,7 +801,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -827,7 +862,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-iOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -842,7 +877,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -894,7 +929,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-iOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -908,7 +943,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -972,7 +1007,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-watchOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1047,7 +1082,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-watchOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1127,7 +1162,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1201,7 +1236,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1276,7 +1311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1342,7 +1377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1421,7 +1456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-macOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1496,7 +1531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-macOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1571,7 +1606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-macOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1638,7 +1673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-macOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
