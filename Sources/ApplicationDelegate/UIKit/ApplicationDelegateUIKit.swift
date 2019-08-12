@@ -8,8 +8,7 @@
 #if canImport(UIKit)
 import UIKit
 
-#if !os(watchOS)
-
+#if !os(watchOS) || !os(macOS)
 public protocol ApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool

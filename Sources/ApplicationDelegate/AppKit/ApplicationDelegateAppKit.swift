@@ -8,7 +8,7 @@
 #if canImport(Cocoa)
 import Cocoa
 
-#if !os(watchOS)
+#if !os(watchOS) || !os(iOS)
 public protocol ApplicationDelegate  {
 
     func applicationWillFinishLaunching(_ aNotification: Notification)
