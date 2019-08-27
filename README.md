@@ -36,6 +36,8 @@ class AppDelegate: PluggableApplicationDelegate {
 
 - Add possibilty to use with Swift Package Manager
 - Add new AppDelegate method for macOS
+- Swift 5.0 copatibility
+- Xcode 10.2 (remove public extension)
 
 ## Install
 ### CocoaPods
