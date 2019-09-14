@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name        = "ApplicationDelegate"
-    s.version       = "0.4.0"
+    s.version       = "0.4.1"
     s.description      = <<-DESC
       Sort description of 'ApplicationDelegate' framework
                        DESC
@@ -24,4 +24,23 @@ Pod::Spec.new do |s|
       s.source_files      = "Sources/**/*.swift"
       s.swift_version = '5.0'
       s.module_name = s.name
+
+      s.exclude_files = "Sources/ApplicationDelegate/Config/*.plist"
+      s.ios.exclude_files = "Sources/ApplicationDelegate/AppKit", "Sources/ApplicationDelegate/WatchKit"
+      s.osx.exclude_files = "Sources/ApplicationDelegate/UIKit", "Sources/ApplicationDelegate/WatchKit"
+      s.tvos.exclude_files = "Sources/ApplicationDelegate/AppKit", "Sources/ApplicationDelegate/WatchKit"
+      s.watchos.exclude_files = "Sources/ApplicationDelegate/AppKit", "Sources/ApplicationDelegate/UIKit"
+
+      # AppKit Extensions
+      s.subspec 'AppKit' do |sp|
+        sp.source_files  = 'Sources/ApplicationDelegate/AppKit/*.swift'
+      end
+      # UIKit Extensions
+      s.subspec 'UIKit' do |sp|
+        sp.source_files  = 'Sources/ApplicationDelegate/UIKit/*.swift'
+      end
+      # WatchKit Extensions
+      s.subspec 'WatchKit' do |sp|
+        sp.source_files  = 'Sources/ApplicationDelegate/WatchKit/*.swift'
+      end
   end

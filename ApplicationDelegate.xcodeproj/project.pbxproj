@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67339E37232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67339E36232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift */; };
+		67339E39232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */; };
+		67339E3E232CCFFA00CE09D2 /* ApplicationDelegateWatchSiriKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67339E3C232CCFEB00CE09D2 /* ApplicationDelegateWatchSiriKit.swift */; };
+		67339E3F232CD31000CE09D2 /* ApplicationDelegateUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */; };
 		678AD254217B8BBE0027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD24A217B8BBE0027C7F2 /* ApplicationDelegate.framework */; };
 		678AD27D217B8BE30027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD274217B8BE30027C7F2 /* ApplicationDelegate.framework */; };
 		678AD299217B8C030027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD290217B8C020027C7F2 /* ApplicationDelegate.framework */; };
@@ -18,7 +22,6 @@
 		678AD2D0217B8CB40027C7F2 /* ApplicationDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2C5217B8CB40027C7F2 /* ApplicationDelegateTests.swift */; };
 		678AD2D1217B8CB40027C7F2 /* ApplicationDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2C5217B8CB40027C7F2 /* ApplicationDelegateTests.swift */; };
 		678AD2D6217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */; };
-		678AD2D7217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */; };
 		678AD2D9217B91280027C7F2 /* ApplicationDelegateAppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2D8217B91280027C7F2 /* ApplicationDelegateAppKit.swift */; };
 		678AD2DB217B934F0027C7F2 /* ApplicationDelegateWatchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2DA217B934F0027C7F2 /* ApplicationDelegateWatchKit.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		672531F9225C6C9D00882912 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		67339E36232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateSiriKit.swift; sourceTree = "<group>"; };
+		67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateCloudKit.swift; sourceTree = "<group>"; };
+		67339E3C232CCFEB00CE09D2 /* ApplicationDelegateWatchSiriKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateWatchSiriKit.swift; sourceTree = "<group>"; };
 		678AD24A217B8BBE0027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD253217B8BBE0027C7F2 /* ApplicationDelegateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationDelegateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD267217B8BD40027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				678AD2DA217B934F0027C7F2 /* ApplicationDelegateWatchKit.swift */,
+				67339E3C232CCFEB00CE09D2 /* ApplicationDelegateWatchSiriKit.swift */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
@@ -228,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */,
+				67339E36232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift */,
+				67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -514,6 +523,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67339E39232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift in Sources */,
+				67339E37232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift in Sources */,
 				678AD2D6217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				678AD2DB217B934F0027C7F2 /* ApplicationDelegateWatchKit.swift in Sources */,
+				67339E3E232CCFFA00CE09D2 /* ApplicationDelegateWatchSiriKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				678AD2D7217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift in Sources */,
+				67339E3F232CD31000CE09D2 /* ApplicationDelegateUIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
