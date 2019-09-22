@@ -11,6 +11,7 @@
 		67339E39232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */; };
 		67339E3E232CCFFA00CE09D2 /* ApplicationDelegateWatchSiriKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67339E3C232CCFEB00CE09D2 /* ApplicationDelegateWatchSiriKit.swift */; };
 		67339E3F232CD31000CE09D2 /* ApplicationDelegateUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */; };
+		6767B5232337823A00EC2414 /* ApplicationDelegateUIScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6767B5222337823A00EC2414 /* ApplicationDelegateUIScene.swift */; };
 		678AD254217B8BBE0027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD24A217B8BBE0027C7F2 /* ApplicationDelegate.framework */; };
 		678AD27D217B8BE30027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD274217B8BE30027C7F2 /* ApplicationDelegate.framework */; };
 		678AD299217B8C030027C7F2 /* ApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678AD290217B8C020027C7F2 /* ApplicationDelegate.framework */; };
@@ -55,6 +56,7 @@
 		67339E36232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateSiriKit.swift; sourceTree = "<group>"; };
 		67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateCloudKit.swift; sourceTree = "<group>"; };
 		67339E3C232CCFEB00CE09D2 /* ApplicationDelegateWatchSiriKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateWatchSiriKit.swift; sourceTree = "<group>"; };
+		6767B5222337823A00EC2414 /* ApplicationDelegateUIScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateUIScene.swift; sourceTree = "<group>"; };
 		678AD24A217B8BBE0027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD253217B8BBE0027C7F2 /* ApplicationDelegateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationDelegateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678AD267217B8BD40027C7F2 /* ApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				678AD2D5217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift */,
 				67339E36232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift */,
 				67339E38232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift */,
+				6767B5222337823A00EC2414 /* ApplicationDelegateUIScene.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6767B5232337823A00EC2414 /* ApplicationDelegateUIScene.swift in Sources */,
 				67339E39232CC63C00CE09D2 /* ApplicationDelegateCloudKit.swift in Sources */,
 				67339E37232CC56700CE09D2 /* ApplicationDelegateSiriKit.swift in Sources */,
 				678AD2D6217B8FF10027C7F2 /* ApplicationDelegateUIKit.swift in Sources */,
