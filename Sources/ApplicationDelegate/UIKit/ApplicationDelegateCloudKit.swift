@@ -11,12 +11,10 @@ import CloudKit
 
 #if !os(watchOS) && !os(macOS) && !os(tvOS)
 extension ApplicationDelegate {
-    @available(iOS 10.0, *)
     public func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {}
 }
 
 extension PluggableApplicationDelegate {
-    @available(iOS 10.0, *)
     public func application(_ application: UIApplication,
                             userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
         lazyServices.forEach { $0.application(application, userDidAcceptCloudKitShareWith: cloudKitShareMetadata) }

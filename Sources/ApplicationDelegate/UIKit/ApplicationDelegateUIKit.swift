@@ -285,7 +285,6 @@ extension ApplicationDelegate {
 
     public func application(_ application: UIApplication, didChangeStatusBarOrientation oldStatusBarOrientation: UIInterfaceOrientation) {}
 
-    @available(iOS 9.0, *)
     public func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {}
 
     public func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return .all }
@@ -300,7 +299,6 @@ extension PluggableApplicationDelegate {
         lazyServices.forEach { $0.application(application, didChangeStatusBarOrientation: oldStatusBarOrientation) }
     }
 
-    @available(iOS 9.0, *)
     public func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         lazyServices.forEach { $0.application(application, performActionFor: shortcutItem, completionHandler: completionHandler) }
     }

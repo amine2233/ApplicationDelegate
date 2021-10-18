@@ -16,25 +16,20 @@ public protocol ApplicationDelegate {
     func applicationWillEnterForeground()
     func applicationDidEnterBackground()
     
-    @available(watchOS 3.0, *)
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>)
     
     // app crashed while in a workout
-    @available(watchOS 5.0, *)
     func handleActiveWorkoutRecovery()
     
     
     // app brought frontmost due to auto-launching audio apps
-    @available(watchOS 5.0, *)
     func handleRemoteNowPlayingActivity()
     
     
     func handleUserActivity(_ userInfo: [AnyHashable : Any]?)
     
-    @available(watchOS 3.2, *)
     func handle(_ userActivity: NSUserActivity)
 
-    @available(watchOS 4.0, *)
     func deviceOrientationDidChange() // called when WKInterfaceDeviceWristLocation, WKInterfaceDeviceCrownOrientation, or autorotated value changes
 }
 
@@ -59,21 +54,17 @@ extension ApplicationDelegate {
     public func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {}
     
     // app crashed while in a workout
-    @available(watchOS 5.0, *)
     public func handleActiveWorkoutRecovery() {}
     
     
     // app brought frontmost due to auto-launching audio apps
-    @available(watchOS 5.0, *)
     public func handleRemoteNowPlayingActivity() {}
     
     
     public func handleUserActivity(_ userInfo: [AnyHashable : Any]?) {}
     
-    @available(watchOS 3.2, *)
     public func handle(_ userActivity: NSUserActivity) {}
     
-    @available(watchOS 4.0, *)
     public func deviceOrientationDidChange() {
         // called when WKInterfaceDeviceWristLocation, WKInterfaceDeviceCrownOrientation, or autorotated value changes
     }
@@ -114,13 +105,11 @@ extension PluggableApplicationDelegate {
 }
 
 extension PluggableApplicationDelegate {
-    @available(watchOS 5.0, *)
     public func handleActiveWorkoutRecovery() {
         lazyServices.forEach { $0.handleActiveWorkoutRecovery() }
     }
     
     // app brought frontmost due to auto-launching audio apps
-    @available(watchOS 5.0, *)
     public func handleRemoteNowPlayingActivity() {
         lazyServices.forEach { $0.handleRemoteNowPlayingActivity() }
     }
@@ -129,12 +118,10 @@ extension PluggableApplicationDelegate {
         lazyServices.forEach { $0.handleUserActivity(userInfo) }
     }
     
-    @available(watchOS 3.2, *)
     public func handle(_ userActivity: NSUserActivity) {
         lazyServices.forEach { $0.handle(userActivity) }
     }
     
-    @available(watchOS 4.0, *)
     public func deviceOrientationDidChange() {
         lazyServices.forEach { $0.deviceOrientationDidChange() }
     }
