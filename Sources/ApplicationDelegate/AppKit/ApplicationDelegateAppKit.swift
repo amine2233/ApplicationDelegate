@@ -56,39 +56,43 @@ extension ApplicationDelegate {
 /// Managing Active Status
 extension ApplicationDelegate {
 
-    func applicationWillBecomeActive(_ aNotification: Notification) {}
-    func applicationDidBecomeActive(_ aNotification: Notification) {}
-    func applicationWillResignActive(_ aNotification: Notification) {}
+    public func applicationWillBecomeActive(_ aNotification: Notification) {}
+    public func applicationDidBecomeActive(_ aNotification: Notification) {}
+    public func applicationWillResignActive(_ aNotification: Notification) {}
 }
 
 /// Hiding Applications
 extension ApplicationDelegate {
-    func applicationWillHide(_ aNotification: Notification) {}
-    func applicationDidHide(_ aNotification: Notification) {}
-    func applicationWillUnhide(_ aNotification: Notification) {}
-    func applicationDidUnhide(_ aNotification: Notification) {}
+
+    public func applicationWillHide(_ aNotification: Notification) {}
+    public func applicationDidHide(_ aNotification: Notification) {}
+    public func applicationWillUnhide(_ aNotification: Notification) {}
+    public func applicationDidUnhide(_ aNotification: Notification) {}
 }
 
 /// Managing Windows
 extension ApplicationDelegate {
 
-    func applicationWillUpdate(_ aNotification: Notification) {}
-    func applicationDidUpdate(_ aNotification: Notification) {}
-    func applicationShouldHandleReopen(_ aSender: NSApplication, hasVisibleWindows flag: Bool) -> Bool { return true }
+    public func applicationWillUpdate(_ aNotification: Notification) {}
+    public func applicationDidUpdate(_ aNotification: Notification) {}
+    public func applicationShouldHandleReopen(_ aSender: NSApplication, hasVisibleWindows flag: Bool) -> Bool { return true }
 }
 
 /// Managing the Dock Menu
 extension ApplicationDelegate {
-    func applicationDockMenu(_ aSender: NSApplication) -> NSMenu? { return nil }
+
+    public func applicationDockMenu(_ aSender: NSApplication) -> NSMenu? { return nil }
 }
 
 /// Displaying Errors
 extension ApplicationDelegate {
-    func application(_ application: NSApplication, willPresentError error: Error) -> Error { return error }
+
+    public func application(_ application: NSApplication, willPresentError error: Error) -> Error { return error }
 }
 
 /// Managing the Screen
 extension ApplicationDelegate {
+
     func applicationDidChangeScreenParameters(_ aNotification: Notification) {}
 }
 
@@ -98,7 +102,7 @@ open class PluggableApplicationDelegate: NSObject, NSApplicationDelegate {
     
     public lazy var lazyServices: [ApplicationDelegate] = services()
     
-    public func services() -> [ApplicationDelegate] {
+    open func services() -> [ApplicationDelegate] {
         return []
     }
 }
