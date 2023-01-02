@@ -21,6 +21,7 @@ public protocol ApplicationDelegate  {
     func applicationWillBecomeActive(_ aNotification: Notification)
     func applicationDidBecomeActive(_ aNotification: Notification)
     func applicationWillResignActive(_ aNotification: Notification)
+    func applicationDidResignActive(_ aNotification: Notification)
 
     func applicationWillHide(_ aNotification: Notification)
     func applicationDidHide(_ aNotification: Notification)
@@ -93,7 +94,7 @@ extension ApplicationDelegate {
 /// Managing the Screen
 extension ApplicationDelegate {
 
-    func applicationDidChangeScreenParameters(_ aNotification: Notification) {}
+    public func applicationDidChangeScreenParameters(_ aNotification: Notification) {}
 }
 
 open class PluggableApplicationDelegate: NSObject, NSApplicationDelegate {
@@ -153,6 +154,11 @@ extension PluggableApplicationDelegate {
     /// Sent by the default notification center immediately before the application is deactivated.
     public func applicationWillResignActive(_ aNotification: Notification) {
         lazyServices.forEach { $0.applicationWillResignActive(aNotification) }
+    }
+
+    /// Sent by the default notification center immediately after the application is deactivated.
+    public func applicationDidResignActive(_ aNotification: Notification) {
+        lazyServices.forEach { $0.applicationDidResignActive(aNotification) }
     }
 }
 
