@@ -25,8 +25,6 @@ Pod::Spec.new do |s|
       s.source_files      = "Sources/**/*.swift"
       s.swift_version = '5.4'
       s.module_name = s.name
-
-      s.exclude_files = "Sources/ApplicationDelegate/Config/*.plist"
       s.ios.exclude_files = "Sources/ApplicationDelegate/AppKit", "Sources/ApplicationDelegate/WatchKit"
       s.osx.exclude_files = "Sources/ApplicationDelegate/UIKit", "Sources/ApplicationDelegate/WatchKit"
       s.tvos.exclude_files = "Sources/ApplicationDelegate/AppKit", "Sources/ApplicationDelegate/WatchKit"
