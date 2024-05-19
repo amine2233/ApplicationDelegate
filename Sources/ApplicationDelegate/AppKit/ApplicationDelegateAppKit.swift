@@ -60,6 +60,7 @@ extension ApplicationDelegate {
     public func applicationWillBecomeActive(_ aNotification: Notification) {}
     public func applicationDidBecomeActive(_ aNotification: Notification) {}
     public func applicationWillResignActive(_ aNotification: Notification) {}
+    public func applicationDidResignActive(_ aNotification: Notification) {}
 }
 
 /// Hiding Applications
