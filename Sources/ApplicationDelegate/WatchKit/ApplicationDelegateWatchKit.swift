@@ -9,7 +9,7 @@
 import WatchKit
 
 #if !os(iOS) && !os(macOS) && !os(tvOS)
-public protocol ApplicationDelegate {
+public protocol ApplicationDelegate: Sendable {
     func applicationDidFinishLaunching()
     func applicationDidBecomeActive()
     func applicationWillResignActive()

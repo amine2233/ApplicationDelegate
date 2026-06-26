@@ -16,7 +16,7 @@ extension ApplicationDelegate {
 
 extension PluggableApplicationDelegate {
     public func handle(_ intent: INIntent, completionHandler: @escaping (INIntentResponse) -> Void) {
-        lazyServices.forEach { $0.application(intent, completionHandler: completionHandler) }
+        lazyServices.forEach { $0.handle(intent, completionHandler: completionHandler) }
     }
 }
 

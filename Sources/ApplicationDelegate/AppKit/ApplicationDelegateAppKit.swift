@@ -9,7 +9,7 @@
 import Cocoa
 
 #if !os(watchOS) && !os(iOS) && !os(tvOS)
-public protocol ApplicationDelegate  {
+public protocol ApplicationDelegate: Sendable  {
 
     func applicationWillFinishLaunching(_ aNotification: Notification)
     func applicationDidFinishLaunching(_ aNotification: Notification)

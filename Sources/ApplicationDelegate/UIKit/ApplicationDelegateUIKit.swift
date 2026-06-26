@@ -9,7 +9,7 @@
 import UIKit
 
 #if !os(watchOS) && !os(macOS)
-public protocol ApplicationDelegate {
+public protocol ApplicationDelegate: Sendable {
 
     func applicationDidFinishLaunching(_ application: UIApplication)
 
