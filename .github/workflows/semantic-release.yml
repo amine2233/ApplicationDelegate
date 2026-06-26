@@ -1,0 +1,27 @@
+name: Semantic Release
+
+# Thin caller of the shared reusable workflow:
+#   amine2233/ci-shared/.github/workflows/semantic-release.yml
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview the release without publishing (no tag, no commit, no GitHub Release)."
+        type: boolean
+        default: true
+
+concurrency:
+  group: semantic-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    uses: amine2233/ci-shared/.github/workflows/semantic-release.yml@1.0.2
+    with:
+      release-args: ${{ inputs.dry_run && '--dry-run --write-change-log' || '--write-change-log' }}
+    secrets: inherit

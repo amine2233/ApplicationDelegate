@@ -1,0 +1,96 @@
+[tools]
+swift = '6.3.1'
+"github:executor-cli/executor" = "0.27.1"
+
+[env]
+_.file = ".env.local"
+
+[tasks.format]
+description = "Format the code using SwiftFormat"
+run = "executor format ."
+
+[tasks.test]
+description = "Run package tests (cross-platform: works on macOS and Linux)."
+run = "swift test"
+
+[tasks.test-coverage]
+description = "Run tests with executor-generated coverage report (requires xcrun; macOS only)."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+executor swift test --enable-code-coverage
+executor test report --report-for-type swift ./
+executor coverage swift --verbose
+'''
+
+[tasks.release]
+description = "Run semantic-release. Use --dry-run to preview without publishing."
+usage = '''
+flag "-d --dry-run" help="Preview the release without publishing (no tag, no commit, no GitHub Release)"
+flag "--write-change-log" help="Enable writing a changelog"
+flag "--skip-ci/--no-skip-ci" help="Skip CI (default: --skip-ci)" default="true"
+flag "--verbose" help="Enable verbose mode"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Map usage flags to executor options
+dry_run_opt=""
+if [[ "${usage_dry_run:-}" == "true" ]]; then
+    dry_run_opt="--dry-run"
+fi
+
+enable_changelog_opt=""
+if [[ "${usage_write_change_log:-}" == "true" ]]; then
+    enable_changelog_opt="--write-change-log"
+fi
+
+enable_verbose_opt=""
+if [[ "${usage_verbose:-}" == "true" ]]; then
+    enable_verbose_opt="--verbose"
+fi
+
+# Default to skipping CI unless explicitly disabled
+skip_ci_opt="--skip-ci"
+if [[ "${usage_skip_ci:-}" == "false" ]]; then
+    skip_ci_opt="--no-skip-ci"
+fi
+
+executor release package $dry_run_opt $enable_changelog_opt $enable_verbose_opt $skip_ci_opt --current-directory .
+'''
+
+[tasks.check_documentation]
+description = "Lint code documentation"
+run = "executor linting documentation ./Sources --reporter console"
+
+[tasks.check_code]
+description = "Lint source code"
+run = "executor linting code ./Sources --reporter console"
+
+[tasks.check_commit_title]
+description = "Lint the latest commit title against the project's convention."
+run = "executor check-ci commit-title"
+
+[tasks.build_documentations]
+description = "Build the documentation using docc"
+usage = '''
+arg <platform> help="The default platform" default="macOS" {
+    choices "iOS" "macOS"
+}
+flag "--hosting-base-path <hosting-base-path>" help="Hosting base path" default="" env="HOSTING_BASE_PATH"
+flag "--main-library-name <main-library-name>" help="The main package library" default="ApplicationDelegate" env="MAIN_LIBRARY_NAME"
+flag "--serve" help="Start a Python HTTP server after building"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+executor xcodebuild docc\
+    --platform "${usage_platform?}"\
+    --hosting-base-path "${usage_hosting_base_path?}"\
+    --output-path "public"\
+    --verbose
+if [[ "${usage_serve:-}" == "true" ]]; then
+    python3 -m http.server -d public
+fi
+'''
