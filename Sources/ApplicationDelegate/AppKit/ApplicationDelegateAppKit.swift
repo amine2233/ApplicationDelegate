@@ -98,6 +98,7 @@ extension ApplicationDelegate {
     public func applicationDidChangeScreenParameters(_ aNotification: Notification) {}
 }
 
+@MainActor
 open class PluggableApplicationDelegate: NSObject, NSApplicationDelegate {
     
     public var application: NSApplication?

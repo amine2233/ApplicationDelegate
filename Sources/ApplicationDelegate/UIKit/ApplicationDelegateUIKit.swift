@@ -125,6 +125,7 @@ extension ApplicationDelegate {
     public func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {}
 }
 
+@MainActor
 open class PluggableApplicationDelegate: UIResponder, UIApplicationDelegate {
     public var window: UIWindow?
     
