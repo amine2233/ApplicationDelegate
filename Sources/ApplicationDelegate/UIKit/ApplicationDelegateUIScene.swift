@@ -27,7 +27,7 @@ extension PluggableApplicationDelegate {
     }
 }
 
-public protocol ApplicationSceneProtocol {
+public protocol ApplicationSceneProtocol: Sendable {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     func sceneDidDisconnect(_ scene: UIScene)
     func sceneDidBecomeActive(_ scene: UIScene)
