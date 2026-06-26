@@ -50,6 +50,7 @@ extension ApplicationSceneProtocol {
     func sceneDidEnterBackground(_: UIScene) {}
 }
 
+@MainActor
 open class PluggableApplicationSceneDelegate: UIResponder, UISceneDelegate {
     public lazy var lazyServices: [ApplicationSceneProtocol] = services()
 

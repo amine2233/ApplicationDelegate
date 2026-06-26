@@ -70,6 +70,7 @@ extension ApplicationDelegate {
     }
 }
 
+@MainActor
 open class PluggableApplicationDelegate: NSObject, WKExtensionDelegate {
     public lazy var lazyServices: [ApplicationDelegate] = services()
     
