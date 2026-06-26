@@ -1,0 +1,20 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  docs:
+    uses: amine2233/ci-shared/.github/workflows/pages.yml@1.0
+    with:
+      main-library-name: ApplicationDelegate
+      hosting-base-path: ${{ github.event.repository.name }}
+      platform: macOS
+      macos-runner: macos-latest
